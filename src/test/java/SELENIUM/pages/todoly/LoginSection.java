@@ -2,9 +2,12 @@ package SELENIUM.pages.todoly;
 
 import SELENIUM.controls.Button;
 import SELENIUM.controls.TextBox;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 
 public class LoginSection {
+
+    
 
     public TextBox emailTxtBox = new TextBox(By.id("ctl00_MainContent_LoginControl1_TextBoxEmail"));
     public TextBox pwdTxtBox = new TextBox(By.id("ctl00_MainContent_LoginControl1_TextBoxPassword"));
@@ -14,6 +17,16 @@ public class LoginSection {
         this.emailTxtBox.setText(email);
         this.pwdTxtBox.setText(pwd);
         this.loginButton.click();
+    }
+
+
+    public boolean loginTF(String email, String pwd){
+        this.emailTxtBox.setText(email);
+        this.pwdTxtBox.setText(pwd);
+        this.loginButton.click();
+
+        return Assertions.assertTrue(menuSection.logoutButton.isControlDisplayed(),
+                "ERROR! the login was failed");
     }
 
 }
