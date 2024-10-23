@@ -37,6 +37,5 @@ public class CreateUser extends Base{
         Assertions.assertTrue(menuSection.logoutButton.isControlDisplayed(),
                 "ERROR! the login was failed");
 
-
     }
 }

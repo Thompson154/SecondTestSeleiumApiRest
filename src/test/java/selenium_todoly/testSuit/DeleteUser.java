@@ -34,7 +34,5 @@ public class DeleteUser extends Base{
         Assertions.assertFalse(menuSection.logoutButton.isControlDisplayed(),
                 "ERROR! the delete user was failed");
 
-
-
     }
 }
